@@ -27,13 +27,15 @@ This is a README for the experimental code of the following paper
 We demonstrate how to reproduce the evaluation results in our paper
 by downloading the raw dataset and pretrained models.
 
-### Download Dataset (Eurlex-4K, Wiki10-31K)
+### Download Dataset (Eurlex-4K, Wiki10-31K, AmazonCat-13K, Wiki-500K)
 Change directory into ./datasets folder, download and unzip each dataset
 
 ```bash
 cd ./datasets
 bash download-data.sh Eurlex-4K
 bash download-data.sh Wiki10-31K
+bash download-data.sh AmazonCat-13K
+bash download-data.sh Wiki-500K
 cd ../
 ```
 
@@ -50,6 +52,8 @@ Change directory into ./pretrained_models folder, download and unzip models for 
 cd ./pretrained_models
 bash download-models.sh Eurlex-4K
 bash download-models.sh Wiki10-31K
+bash download-models.sh AmazonCat-13K
+bash download-models.sh Wiki-500K
 cd ../
 ```
 Each folder has the following strcture
@@ -63,16 +67,14 @@ Each folder has the following strcture
 Given the provided indexing codes (label-to-cluster assignments), train/predict linear models, and evaluate with Precision/Recall@k:
 
 ```bash
-bash eval_linear_v0.sh ${DATASET} ${LABEL_EMB}
-bash eval_linear_v1.sh ${DATASET} ${LABEL_EMB}
+bash eval_linear.sh ${DATASET} ${VERSION}
 ```
 
 - ```DATASET```: the dataset name such as Eurlex-4K, Wiki10-31K, AmazonCat-13K, or Wiki-500K.
-- ```v0```: instance embedding using sparse TF-IDF features.
-- ```v1```: instance embedding using sparse TF-IDF features concatenate with dense fine-tuned XLNet embedding.	
+- ```VERSION```: v0=sparse TF-IDF features. v1=sparse TF-IDF features concatenate with dense fine-tuned XLNet embedding.	
 
 The evaluaiton results should located at
-``` ./results_linear/${DATASET}.${LABEL_EMB}.${VERSION}.txt ```
+``` ./results_linear/${DATASET}.${VERSION}.txt ```
 
 
 ### Evaluate Fine-tuned X-Transformer Models

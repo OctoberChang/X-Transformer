@@ -87,7 +87,7 @@ bash eval_transformer.sh ${DATASET}
 - ```DATASET```: the dataset name such as Eurlex-4K, Wiki10-31K, AmazonCat-13K, or Wiki-500K.	
 
 The evaluaiton results should located at
-``` ./results_transformer-large/${DATASET}.final.txt ```
+``` ./results_transformer/${DATASET}.final.txt ```
 
 
 ## Running X-Transformer on customized datasets

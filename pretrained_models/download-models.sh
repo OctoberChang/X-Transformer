@@ -90,7 +90,9 @@ label_emb_arr=( pifa-tfidf pifa-neural text-emb )
 model_type_arr=( bert roberta xlnet )
 for label_emb in "${label_emb_arr[@]}"; do
     for model_type in "${model_type_arr[@]}"; do
-        tar -xzvf ${label_emb}-s0.${model_type}.tar.gz ${dataset}
+        tar -xzvf ${label_emb}-s0.${model_type}.tar.gz
     done
 done
+
+rm -f *.gz
 

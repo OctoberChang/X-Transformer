@@ -36,4 +36,4 @@ else
 fi
 
 tar -xzvf ${dataset}.tar.gz
-
+rm -f ${dataset}.tar.gz

@@ -1,0 +1,20 @@
+Namespace(ensemble=True, input_inst_label='datasets/Wiki10-31K/Y.tst.npz', pred_path=['pretrained_models/Wiki10-31K/pifa-tfidf-s0/ranker/linear-v1/tst.pred.npz', 'pretrained_models/Wiki10-31K/pifa-tfidf-s1/ranker/linear-v1/tst.pred.npz', 'pretrained_models/Wiki10-31K/pifa-tfidf-s2/ranker/linear-v1/tst.pred.npz'])
+==== Evaluation on pretrained_models/Wiki10-31K/pifa-tfidf-s0/ranker/linear-v1/tst.pred.npz
+prec   = 87.39 83.03 77.67 72.59 67.78 63.62 60.28 57.20 54.36 51.78
+recall = 5.21 9.78 13.59 16.78 19.42 21.71 23.85 25.74 27.41 28.90
+==== Evaluation on pretrained_models/Wiki10-31K/pifa-tfidf-s1/ranker/linear-v1/tst.pred.npz
+prec   = 86.94 82.82 77.69 72.94 68.19 63.94 60.30 57.24 54.30 51.61
+recall = 5.18 9.76 13.57 16.86 19.56 21.84 23.86 25.74 27.35 28.80
+==== Evaluation on pretrained_models/Wiki10-31K/pifa-tfidf-s2/ranker/linear-v1/tst.pred.npz
+prec   = 87.11 82.72 77.45 72.16 67.81 63.90 60.44 57.38 54.59 51.95
+recall = 5.20 9.76 13.57 16.68 19.46 21.87 23.98 25.90 27.61 29.09
+==== Evaluations of Ensembles of All Predictions ====
+ens: average
+prec   = 87.48 83.25 78.22 73.02 68.36 64.20 60.79 57.82 55.18 52.67
+recall = 5.22 9.81 13.70 16.88 19.63 21.95 24.10 26.05 27.84 29.39
+ens: rank_average
+prec   = 87.35 83.15 78.24 73.06 68.62 64.57 61.00 58.04 55.22 52.63
+recall = 5.22 9.80 13.70 16.88 19.68 22.07 24.18 26.17 27.86 29.37
+ens: round_robin
+prec   = 87.39 83.00 77.89 72.69 68.17 64.03 60.61 57.56 54.85 52.40
+recall = 5.21 9.77 13.63 16.79 19.55 21.86 24.00 25.90 27.64 29.24

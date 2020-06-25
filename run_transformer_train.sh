@@ -31,13 +31,12 @@ GRAD_ACCU_STEPS=2
 # set hyper-params by dataset
 if [ ${DATASET} == "Eurlex-4K" ]; then
     MAX_STEPS=1000
-    MAX_STEPS=100
     WARMUP_STEPS=100
     LOGGING_STEPS=50
     LEARNING_RATE=5e-5
 elif [ ${DATASET} == "Wiki10-31K" ]; then
-    MAX_STEPS=2000
-    WARMUP_STEPS=200
+    MAX_STEPS=1400
+    WARMUP_STEPS=100
     LOGGING_STEPS=50
     LEARNING_RATE=5e-5
 elif [ ${DATASET} == "AmazonCat-13K" ]; then
@@ -60,7 +59,6 @@ mkdir -p ${MODEL_DIR}
 
 
 # train
-#: "
 CUDA_VISIBLE_DEVICES=${GPID} python -m torch.distributed.launch \
     --nproc_per_node 8 xbert/transformer.py \
     -m ${MODEL_TYPE} -n ${MODEL_NAME} --do_train \
@@ -74,7 +72,6 @@ CUDA_VISIBLE_DEVICES=${GPID} python -m torch.distributed.launch \
     --learning_rate ${LEARNING_RATE} \
     --logging_steps ${LOGGING_STEPS} \
     |& tee ${MODEL_DIR}/log.txt
-#"
 
 
 # predict

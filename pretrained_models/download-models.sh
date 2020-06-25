@@ -25,6 +25,8 @@ function gdrive-get() {
 mkdir -p ${dataset}
 cd ${dataset}
 
+
+
 if [ ${dataset} == 'Eurlex-4K' ]; then
     gdrive-get 1ZplgIYqJavtAJNaqnyvaE77IZZbCrXJw indexer.tar.gz
 	gdrive-get 1Kv8_62RU1gfiAULCPvkMY5kk1ttTxQzc proc_data.tar.gz
@@ -93,6 +95,4 @@ for label_emb in "${label_emb_arr[@]}"; do
         tar -xzvf ${label_emb}-s0.${model_type}.tar.gz
     done
 done
-
-rm -f *.gz
 

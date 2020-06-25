@@ -29,11 +29,10 @@ elif [ ${dataset} == 'Wiki10-31K' ]; then
 elif [ ${dataset} == 'AmazonCat-13K' ]; then
 	gdrive-get 1oxNwL9o9zGEhnBT8i0g5tN7ZBIggLk85 ${dataset}.tar.gz
 elif [ ${dataset} == 'Wiki-500K' ]; then
-	gdrive-get 1WMyCqVstoZdjFU0-WBaK2cRV09IzUwav ${dataset}.tar.bz2
+	gdrive-get 1WMyCqVstoZdjFU0-WBaK2cRV09IzUwav ${dataset}.tar.gz
 else
 	echo "unknown dataset [ Eurlex-4K | Wiki10-31K | AmazonCat-13K | Wiki-500K ]"
 	exit
 fi
 
 tar -xzvf ${dataset}.tar.gz
-rm -f ${dataset}.tar.gz

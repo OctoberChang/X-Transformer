@@ -1,7 +1,7 @@
 # Taming Pretrained Transformers for XMC problems
 
 This is a README for the experimental code of the following paper
->[Taming Pretrained Transformers for eXtreme Multi-label Text Classification](#)
+>[Taming Pretrained Transformers for eXtreme Multi-label Text Classification](https://arxiv.org/abs/1905.02331)
 
 >Wei-Cheng Chang, Hsiang-Fu Yu, Kai Zhong, Yiming Yang, Inderjit Dhillon
 

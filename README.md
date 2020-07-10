@@ -57,7 +57,7 @@ bash download-models.sh Wiki-500K
 cd ../
 ```
 Each folder has the following strcture
-- ```proc_data```: a sub-folder containing: X.{trn|tst}.{model}.128.pt, C.{label-emb}.npz, L.{label-emb}.npz
+- ```proc_data```: a sub-folder containing: X.{trn|tst}.{model}.128.pkl, C.{label-emb}.npz, L.{label-emb}.npz
 - ```pifa-tfidf-s0```: a sub-folder containing indexer and matcher
 - ```pifa-neural-s0```: a sub-folder containing indexer and matcher 
 - ```text-emb-s0```: a sub-folder containing indexer and matcher

@@ -15,7 +15,7 @@ from tqdm import tqdm
 import scipy as sp
 import scipy.sparse as smat
 from sklearn.preprocessing import normalize
-
+import pandas as pd
 
 from transformers import (
     WEIGHTS_NAME,
@@ -114,14 +114,12 @@ def run_label_embedding(args):
 
 
 def load_feat_data(text_path):
-    xseq_list = []
-    with open(text_path, "r") as fin:
-        for idx, line in enumerate(tqdm(fin)):
-            xseq = line.strip()
-            if len(xseq) == 0:
-                logger.info("WARNING: line {} has empty text".format(idx))
-                xseq = ""
-            xseq_list.append(xseq)
+    xseqs = pd.read_csv(text_path, header=None, sep='\t').replace(
+        r'\n', ' ', regex=True)[0]  # we replaced any newline characters within each "line" here.
+    #Note that this is actualyl redundant due to the to_list method.
+    xseqs = xseqs.apply(lambda x: x.strip())
+    xseq_list = xseqs.to_list()
+    logger.info(f'Created X_seq list of size {len(xseq_list)}')
     return xseq_list
 
 

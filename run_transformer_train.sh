@@ -48,7 +48,7 @@ elif [ ${DATASET} == "Wiki-500K" ]; then
     MAX_STEPS=80000
     WARMUP_STEPS=1000
     LOGGING_STEPS=100
-    LEARNING_RATE=6e-5
+    LEARNING_RATE=6e-5  # users may need to tune this LEARNING_RATE={2e-5,4e-5,6e-5,8e-5} depending on their CUDA/Pytorch environments
 else
     echo "dataset not support [ Eurlex-4K | Wiki10-31K | AmazonCat-13K | Wiki-500K ]"
     exit

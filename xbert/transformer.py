@@ -395,20 +395,34 @@ class TransformerMatcher(object):
                 total_loss += cur_batch_size * loss
 
                 # get pooled_output, which is the [CLS] embedding for the document
-                # assume self.model hasattr module because torch.nn.DataParallel
                 if get_hidden:
                     if args.model_type == "bert":
-                        pooled_output = self.model.module.bert.pooler(hidden_states[-1])
-                        pooled_output = self.model.module.dropout(pooled_output)
+                        if args.n_gpu > 1:
+                         # assume self.model hasattr module because torch.nn.DataParallel. Else, just pull model.bert. in single gpu case
+                            pooled_output = self.model.module.bert.pooler(hidden_states[-1])
+                            pooled_output = self.model.module.dropout(pooled_output)
+                        else: #single-gpu
+                            pooled_output = self.model.bert.pooler(hidden_states[-1])
+                            pooled_output = self.model.dropout(pooled_output)
                         # logits = self.model.classifier(pooled_output)
                     elif args.model_type == "roberta":
-                        pooled_output = self.model.module.classifier.dropout(hidden_states[-1][:, 0, :])
-                        pooled_output = self.model.module.classifier.dense(pooled_output)
-                        pooled_output = torch.tanh(pooled_output)
-                        pooled_output = self.model.module.classifier.dropout(pooled_output)
+                        if args.n_gpu > 1:
+                            pooled_output = self.model.module.classifier.dropout(hidden_states[-1][:, 0, :])
+                            pooled_output = self.model.module.classifier.dense(pooled_output)
+                            pooled_output = torch.tanh(pooled_output)
+                            pooled_output = self.model.module.classifier.dropout(pooled_output)
                         # logits = self.model.classifier.out_proj(pooled_output)
+                        else:
+                            pooled_output = self.model.classifier.dropout(hidden_states[-1][:, 0, :])
+                            pooled_output = self.model.classifier.dense(pooled_output)
+                            pooled_output = torch.tanh(pooled_output)
+                            pooled_output = self.model.classifier.dropout(pooled_output)
                     elif args.model_type == "xlnet":
-                        pooled_output = self.model.module.sequence_summary(hidden_states[-1])
+                        if args.n_gpu > 1:
+                            pooled_output = self.model.module.sequence_summary(hidden_states[-1])
+                        else:
+                            pooled_output = self.model.sequence_summary(hidden_states[-1])
+
                         # logits = self.model.logits_proj(pooled_output)
                     else:
                         raise NotImplementedError("unknown args.model_type {}".format(args.model_type))

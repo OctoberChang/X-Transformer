@@ -270,7 +270,7 @@ def main(args):
         smat.save_npz(out_tst_label_path, C_tst)
 
     else:
-        raise ValueError("one of --do_label_embedding or --do_proc_feeat or --do_proc_label must be set!")
+        raise ValueError("one of --do_label_embedding or --do_proc_feat or --do_proc_label must be set!")
 
 
 if __name__ == "__main__":

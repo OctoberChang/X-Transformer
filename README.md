@@ -142,7 +142,6 @@ for SEED in "${SEED_LIST[@]}"; do
     LABEL_EMB_NAME=${LABEL_EMB}-s${SEED}
     INDEXER_DIR=${OUTPUT_DIR}/${LABEL_EMB_NAME}/indexer
     python -u -m xbert.indexer \
-    python -m xbert.preprocess \
         -i ${PROC_DATA_DIR}/L.${LABEL_EMB}.npz \
         -o ${INDEXER_DIR} --seed ${SEED}
 ```

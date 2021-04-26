@@ -1,0 +1,38 @@
+Namespace(ensemble=True, input_inst_label='datasets/Eurlex-4K/Y.tst.npz', pred_path=['pretrained_models/Eurlex-4K/pifa-tfidf-s0/ranker/bert-large-cased-whole-word-masking/tst.pred.npz', 'pretrained_models/Eurlex-4K/pifa-tfidf-s0/ranker/roberta-large/tst.pred.npz', 'pretrained_models/Eurlex-4K/pifa-tfidf-s0/ranker/xlnet-large-cased/tst.pred.npz', 'pretrained_models/Eurlex-4K/pifa-neural-s0/ranker/bert-large-cased-whole-word-masking/tst.pred.npz', 'pretrained_models/Eurlex-4K/pifa-neural-s0/ranker/roberta-large/tst.pred.npz', 'pretrained_models/Eurlex-4K/pifa-neural-s0/ranker/xlnet-large-cased/tst.pred.npz', 'pretrained_models/Eurlex-4K/text-emb-s0/ranker/bert-large-cased-whole-word-masking/tst.pred.npz', 'pretrained_models/Eurlex-4K/text-emb-s0/ranker/roberta-large/tst.pred.npz', 'pretrained_models/Eurlex-4K/text-emb-s0/ranker/xlnet-large-cased/tst.pred.npz'])
+==== Evaluation on pretrained_models/Eurlex-4K/pifa-tfidf-s0/ranker/bert-large-cased-whole-word-masking/tst.pred.npz
+prec   = 85.46 79.17 72.87 66.68 60.78 55.28 50.08 45.66 41.84 38.54
+recall = 17.31 31.82 43.42 52.39 59.18 64.12 67.48 70.07 72.07 73.67
+==== Evaluation on pretrained_models/Eurlex-4K/pifa-tfidf-s0/ranker/roberta-large/tst.pred.npz
+prec   = 85.36 79.08 72.85 66.73 60.84 55.38 50.26 45.79 41.97 38.73
+recall = 17.33 31.78 43.39 52.46 59.21 64.23 67.72 70.31 72.36 74.03
+==== Evaluation on pretrained_models/Eurlex-4K/pifa-tfidf-s0/ranker/xlnet-large-cased/tst.pred.npz
+prec   = 84.99 78.99 72.82 66.71 60.76 55.27 50.06 45.54 41.77 38.43
+recall = 17.23 31.71 43.33 52.37 59.06 64.04 67.41 69.89 71.97 73.42
+==== Evaluation on pretrained_models/Eurlex-4K/pifa-neural-s0/ranker/bert-large-cased-whole-word-masking/tst.pred.npz
+prec   = 84.92 78.58 72.46 66.64 60.80 55.06 49.98 45.43 41.64 38.29
+recall = 17.19 31.50 43.13 52.29 59.12 63.81 67.31 69.72 71.77 73.19
+==== Evaluation on pretrained_models/Eurlex-4K/pifa-neural-s0/ranker/roberta-large/tst.pred.npz
+prec   = 84.79 78.94 72.67 66.84 60.83 55.34 50.28 45.72 41.85 38.57
+recall = 17.19 31.69 43.28 52.51 59.21 64.21 67.71 70.17 72.11 73.68
+==== Evaluation on pretrained_models/Eurlex-4K/pifa-neural-s0/ranker/xlnet-large-cased/tst.pred.npz
+prec   = 84.86 78.55 72.43 66.30 60.36 54.80 49.63 45.31 41.51 38.23
+recall = 17.20 31.47 43.01 52.01 58.67 63.52 66.81 69.45 71.43 72.98
+==== Evaluation on pretrained_models/Eurlex-4K/text-emb-s0/ranker/bert-large-cased-whole-word-masking/tst.pred.npz
+prec   = 85.43 78.87 72.89 66.93 60.36 54.50 49.14 44.43 40.53 37.17
+recall = 17.34 31.67 43.41 52.53 58.71 63.18 66.18 68.18 69.84 71.07
+==== Evaluation on pretrained_models/Eurlex-4K/text-emb-s0/ranker/roberta-large/tst.pred.npz
+prec   = 85.49 79.30 73.26 67.25 61.08 55.12 49.67 44.99 41.01 37.59
+recall = 17.34 31.79 43.61 52.79 59.41 63.93 66.95 69.12 70.75 71.93
+==== Evaluation on pretrained_models/Eurlex-4K/text-emb-s0/ranker/xlnet-large-cased/tst.pred.npz
+prec   = 85.30 78.68 72.77 66.59 60.28 54.33 49.03 44.38 40.41 37.03
+recall = 17.30 31.58 43.27 52.24 58.62 63.00 66.05 68.16 69.70 70.86
+==== Evaluations of Ensembles of All Predictions ====
+ens: average
+prec   = 86.96 81.23 75.20 69.15 62.89 57.05 51.91 47.37 43.40 40.01
+recall = 17.66 32.67 44.81 54.31 61.15 66.12 69.87 72.66 74.73 76.40
+ens: rank_average
+prec   = 87.22 81.24 75.12 68.87 62.90 57.05 51.94 47.38 43.47 40.04
+recall = 17.69 32.64 44.73 54.09 61.17 66.12 69.94 72.70 74.85 76.45
+ens: round_robin
+prec   = 85.46 78.98 72.90 67.01 61.02 55.76 50.82 46.47 42.71 39.46
+recall = 17.31 31.73 43.40 52.68 59.43 64.73 68.52 71.38 73.60 75.40

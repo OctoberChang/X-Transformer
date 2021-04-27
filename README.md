@@ -8,7 +8,7 @@ This is a README for the experimental code of the following paper
 >KDD 2020
 
 ## Upates (2021-04-27)
-A better implementation (faster training with stronger performance) of X-Transformer is available at ['PECOS'](https://github.com/amzn/pecos), feel free to try it out!
+A better implementation (faster training with stronger performance) of X-Transformer is available at this Github Repo [PECOS](https://github.com/amzn/pecos), feel free to try it out!
 
 
 ## Installation
